@@ -1,19 +1,63 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>git repo 1</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git intro</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css"> 
+  </head>
+  <body>
     <main>
-        <h1>Git repo 1</h1>
-        <p>Git (/ɡɪt/)[8] is a distributed version control system[9] that tracks versions of files. It is often used to control source code by programmers collaboratively developing software.
-            Design goals of Git include speed, data integrity, and support for distributed, non-linear workflows — thousands of parallel branches running on different computers.[10][11][12] 
-            <q>Källa - Wikipedia</q>
-        </p>
-        <img src="Git-Architechture.png" alt="Git Architechture">
-        <img src="commands.png" alt="Git Architechture">
-        <img src="https://i.pinimg.com/originals/5b/91/83/5b91834b1591169c3ed81589b5d2803d.jpg" alt="Linus Torvald">
+      <h1>Git</h1>
+      <p>
+        Git is a distributed version control system[9] that tracks
+        versions of files. It is often used to control source code by
+        programmers collaboratively developing software. Design goals of Git
+        include speed, data integrity, and support for distributed, non-linear
+        workflows — thousands of parallel branches running on different
+        computers.
+        <q>Källa - Wikipedia</q>
+      </p>
+      <img style="width: 100%;" src="Git-Architechture.png" alt="Git Architechture" />
+      <section>
+        <h2>Hur Git fungerar</h2>
+        <p>Git arbetar med fyra huvudsakliga platser:</p>
+        <ul>
+          <li><b>Working Directory</b>: Där du aktivt redigerar filer lokalt</li>
+          <li>
+            <b>Staging Area</b>: En tillfällig lagringsplats för ändringar innan de
+            committas
+          </li>
+          <li>
+            <b>Local Repository</b>: Lagrar committade ändringar på din lokala maskin
+          </li>
+          <li>
+            <b>Remote Repository</b>: En server (som GitHub) för att dela backa up kod
+          </li>
+        </ul>
+      </section>
+      <img style="width: 100%;" src="commands.png" alt="Git Architechture" />
+      <section>
+        <h2>Vanligt arbetsflöde</h2>
+        <p>Ofta vill man ladda upp sina förändringar på på sin Remote Repository</p>
+        <ul>
+          <li><b>git init</b>: Skapar ett lokalt repo i mappen du står i</li>
+          <li>
+            <b>git add</b>: Lägger till förändringar i filen till staging-området (förbereder filen för commit).
+          </li>
+          <li>
+            <b>git commit -m "message.."</b>: Skapar en commit med de ändringar som lagts till staging-området. Meddelandet beskriver vad som ändrats.
+          </li>
+          <li>
+            <b>git push</b>: Skickar dina commits till ett remote repository.
+          </li>
+        </ul>
+      </section>
+      <img
+        style="width: 100%;"
+        src="https://i.pinimg.com/originals/5b/91/83/5b91834b1591169c3ed81589b5d2803d.jpg"
+        alt="Linus Torvald"
+      />
+      <p>Fun Fact: Linus Torvald skapade Git som ett sidoprojekt när han utvecklade Linux kärnan!</p>
     </main>
-</body>
+  </body>
 </html>
