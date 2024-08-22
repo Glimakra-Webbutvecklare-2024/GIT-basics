@@ -17,7 +17,7 @@
         computers.
         <q>Källa - Wikipedia</q>
       </p>
-      <img style="width: 100%;" src="Git-Architechture.png" alt="Git Architechture" />
+      <img style="width: 100%;" src="images/Git-Architechture.png" alt="Git Architechture" />
       <section>
         <h2>Hur Git fungerar</h2>
         <p>Git arbetar med fyra huvudsakliga platser:</p>
@@ -34,10 +34,10 @@
             <b>Remote Repository</b>: En server (som GitHub) för att dela backa up kod
           </li>
         </ul>
-      </section>
-      <img style="width: 100%;" src="commands.png" alt="Git Architechture" />
-      <section>
+    </section>
+    <section>
         <h2>Vanligt arbetsflöde</h2>
+        <img style="width: 100%;" src="images/commands.png" alt="Git Architechture" />
         <p>Ofta vill man ladda upp sina förändringar på på sin Remote Repository</p>
         <ul>
           <li><b>git init</b>: Skapar ett lokalt repo i mappen du står i</li>
@@ -52,12 +52,59 @@
           </li>
         </ul>
       </section>
+
+      <h2>Skaparen</h2>
       <img
         style="width: 100%;"
         src="https://i.pinimg.com/originals/5b/91/83/5b91834b1591169c3ed81589b5d2803d.jpg"
         alt="Linus Torvald"
       />
       <p>Fun Fact: Linus Torvald skapade Git som ett sidoprojekt när han utvecklade Linux kärnan!</p>
+
+      <h2>Branch - The Killer Feature</h2>
+      <img src="https://git-scm.com/book/en/v2/images/advance-master.png" alt="Git branching">
+      <p>När man utvecklar arbetar man ofta i en seperat branch. En git branch är en separat utvecklingslinje som tillåter parallellt arbete på olika versioner av samma projekt utan att påverka huvudkoden. Detta är git-verktygets stora fördel när man jobbar flera utvecklare på samma projekt.</p>
+      
+      
+      <hr>
+
+      <h2>Uppgift 1</h2>
+      <p><b>Skapa ett repo för en presentationshemsida om dig själv</b></p>
+      <ul>
+        <li>Öppna upp en ny map med VS Code</li>
+        <li>Skapa en index.html fil och lägg in information om dig. Förslagsvis:</li>
+        <ul>
+            <li>Namn och vart du är bostadd</li>
+            <li>En bild</li>
+            <li>Beskriv en av dina hobbies</li>
+        </ul>
+        <li>Använd live-server (eller motsvarande) för att se hur sidan ser ut lokalt</li>
+        <li>Staga din förändringar (add)</li>
+        <li>comitta din förändringar (commit)</li>
+      </ul>
+
+
+      <h2>Uppgift 2</h2>
+      <p><b>Pusha ditt repo till en remote</b></p>
+      <ul>
+        <li>Logga in på Github och navigera till "New Repository"</li>
+        <li>Ge ditt repo ett namn t.ex "presentation-page" och låt repot vara Public</li>
+        <li>Försök följa instruktionerna på Github för att ladda upp ditt lokala repo</li>
+      </ul>
+
+      <h2>Uppgift 3</h2>
+      <p><b>Publicera hemsidan med Github Pages</b></p>
+      <ul>
+        <li>Logga in på Github och navigera till ditt repo du nyss har laddat upp till</li>
+        <li>Gå in på settings och navigera till "Pages"</li>
+        <li>Under "Branch" så välj "main" och tryck "save", vänta 2 minuter och ladda om</li>
+        <li>Skicka din hemsida till Henry på Teams</li>
+      </ul>
+
+      <hr>
+
+      <h3>Resurser</h3>
+      https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
     </main>
   </body>
 </html>
