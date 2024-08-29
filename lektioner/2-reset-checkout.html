@@ -94,9 +94,9 @@
 
         <h2>Tips</h2>
         <ul>
-            <li>Använd <code>git stash</code> för att spara dina nuvarande förändringar tillfälligt innan du kör
+            <li>Använd <code>git stash</code> för att spara dina nuvarande förändringar tillfälligt (utan att göra en commit) innan du kör
                 <code>git reset</code> eller <code>git checkout</code>. Detta säkerställer att du inte förlorar något
-                oväntat.</li>
+                oväntat. När du vill ta tillbaka dina förändrar kan du använda <code>git stash pops</code></li>
             <li>Testa <code>git checkout -b &lt;ny-gren&gt;</code> när du vill utforska en äldre commit utan att störa
                 din nuvarande branch. Detta skapar en ny gren från den gamla commiten.</li>
         </ul>
@@ -107,7 +107,7 @@
             <li><strong>Utforska en tidigare commit:</strong> Använd <code>git log</code> för att hitta en tidigare commit i din historia. Använd sedan <code>git checkout</code> för att återgå till den commiten. Vad händer med din kodbas när du är i "detached HEAD"-läge?</li>
             <li><strong>Återgå till nuvarande branch:</strong> Efter att ha utforskat en tidigare commit, återgå till din nuvarande branch (t.ex., <code>main</code>) med <code>git checkout main</code>. Bekräfta att du är tillbaka på den senaste commiten på din branch.</li>
             <li><strong>Ångra senaste commit:</strong> Gör en ny commit och använd sedan <code>git reset --hard</code> för att ångra den. Verifiera att din senaste commit har försvunnit från historiken.</li>
-            <li><strong>Spara och återställ ändringar:</strong> Gör några ändringar i din kod men stasha dem med <code>git stash</code> innan du använder <code>git reset</code>. Återställ sedan ändringarna från stashen och verifiera att de finns kvar.</li>
+            <li><strong>Spara och återställ ändringar:</strong> Gör några ändringar i din kod men stasha dem med <code>git stash</code> innan du använder <code>git reset</code>. Återställ sedan ändringarna från stashen med <code>git stash pop</code>och verifiera att de finns kvar.</li>
             <li><strong>Ångra utan att förlora ändringar:</strong> Gör en commit och använd sedan <code>git reset --soft</code> för att ångra den utan att förlora dina ändringar. Bekräfta att ändringarna fortfarande är staged.</li>
         </ol>
 
