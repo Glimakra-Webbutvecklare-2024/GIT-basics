@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git reset och git checkout</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css"> 
+</head>
+<body>
+    <h1>Använd <code>git reset</code> och <code>git checkout</code> för att Gå Tillbaka i Din Lokala Git-Historik</h1>
+
+    <p>När du arbetar med Git, kan du ibland behöva återgå till tidigare commits för att ångra ändringar eller för att granska gamla versioner av din kod. Två vanliga kommandon för detta är <code>git reset</code> och <code>git checkout</code>. Den här tutorialen kommer att guida dig genom hur du använder dessa kommandon för att navigera din lokala Git-historik.</p>
+
+    <h2>Förutsättningar:</h2>
+    <ul>
+        <li>Du har en grundläggande förståelse för Git och vet hur man skapar commits.</li>
+        <li>Du har Git installerat och en terminal (Git Bash för Windows, Terminal för macOS).</li>
+    </ul>
+
+    <h2>1. Använda <code>git log</code> för att se din historik</h2>
+    <p>Innan du kan återgå till en tidigare commit, behöver du veta var i historiken du vill gå tillbaka till. Detta gör du med kommandot:</p>
+    <pre><code>git log</code></pre>
+    <p>Detta visar en lista över dina commits, med de senaste commiten högst upp. Varje commit visas med en hash (en lång alfanumerisk sträng), en författare, ett datum och ett commit-meddelande.</p>
+
+    <h2>2. Gå tillbaka med <code>git checkout</code></h2>
+    <p>Om du vill gå tillbaka och titta på en tidigare commit utan att ändra din nuvarande branch (t.ex., bara för att se hur koden såg ut vid en viss tidpunkt), kan du använda:</p>
+    <pre><code>git checkout &lt;commit-hash&gt;</code></pre>
+    <p><strong>Exempel:</strong></p>
+    <pre><code>git checkout a1b2c3d4</code></pre>
+    <p>Detta kommando placerar dig i "detached HEAD"-läget, vilket innebär att du nu tittar på en äldre version av din kod. Ändringar du gör här påverkar inte din nuvarande branch tills du går tillbaka till den.</p>
+
+    <h3>Gå tillbaka till den senaste commiten på din branch:</h3>
+    <p>När du är klar och vill gå tillbaka till den senaste commiten på din branch (t.ex., <code>main</code> eller <code>master</code>), använd:</p>
+    <pre><code>git checkout main</code></pre>
+
+    <h2>3. Återställa en commit med <code>git reset</code></h2>
+    <p>Om du vill ångra ändringar genom att flytta tillbaka din branch till en tidigare commit, kan du använda:</p>
+    <pre><code>git reset --hard &lt;commit-hash&gt;</code></pre>
+    <p><strong>Exempel:</strong></p>
+    <pre><code>git reset --hard a1b2c3d4</code></pre>
+    <p>Detta kommer att flytta din nuvarande branchs HEAD till den angivna commiten, och alla ändringar som skett efter den commiten kommer att försvinna. Det är ett kraftfullt kommando, så använd det med försiktighet!</p>
+
+    <h3>Andra alternativ för <code>git reset</code>:</h3>
+    <ul>
+        <li><code>git reset --soft &lt;commit-hash&gt;</code>: Flyttar HEAD till den specifika commiten, men behåller alla ändringar som "staged" (i indexet).</li>
+        <li><code>git reset --mixed &lt;commit-hash&gt;</code>: Flyttar HEAD till den specifika commiten och behåller ändringar som "unstaged". Detta är standardbeteendet om du inte anger en flagga.</li>
+    </ul>
+
+    <h2>4. Skillnaden mellan <code>git checkout</code> och <code>git reset</code></h2>
+    <ul>
+        <li><strong><code>git checkout</code></strong>: Används för att navigera mellan commits, grenar eller tillfälligt återgå till en tidigare commit. Det påverkar inte din gren och låter dig utforska eller testa koden från en viss commit utan att ändra historiken.</li>
+        <li><strong><code>git reset</code></strong>: Används för att permanent flytta din gren bakåt i historiken. Det ändrar var HEAD pekar och kan användas för att ångra commits.</li>
+    </ul>
+
+    <h2>5. Återställning med <code>git reset</code> och <code>git checkout</code></h2>
+    <p>Låt oss säga att du har gjort några commits som du nu vill bli av med. Här är stegen:</p>
+    <ol>
+        <li>Visa din commit-historik:
+            <pre><code>git log</code></pre>
+        </li>
+        <li>Identifiera hash-värdet för den commit du vill återgå till.</li>
+        <li>Använd <code>git reset</code> för att flytta HEAD tillbaka till den tidigare commiten:
+            <pre><code>git reset --hard &lt;commit-hash&gt;</code></pre>
+        </li>
+        <li>Om du bara vill titta på en äldre commit utan att påverka din nuvarande branch:
+            <pre><code>git checkout &lt;commit-hash&gt;</code></pre>
+        </li>
+        <li>Återgå till den senaste commiten på din branch:
+            <pre><code>git checkout main</code></pre>
+        </li>
+    </ol>
+
+    <h2>6. Tips</h2>
+    <ul>
+        <li>Använd <code>git stash</code> för att spara dina nuvarande förändringar tillfälligt innan du kör <code>git reset</code> eller <code>git checkout</code>. Detta säkerställer att du inte förlorar något oväntat.</li>
+        <li>Testa <code>git checkout -b &lt;ny-gren&gt;</code> när du vill utforska en äldre commit utan att störa din nuvarande branch. Detta skapar en ny gren från den gamla commiten.</li>
+    </ul>
+
+    <h2>Slutsats</h2>
+    <p>Att använda <code>git reset</code> och <code>git checkout</code> på rätt sätt kan hjälpa dig att effektivt hantera din lokala Git-historik. Med övning kommer du att känna dig bekväm med att navigera i historiken och återställa ändringar när det behövs. Se till att alltid ha en säkerhetskopia eller använda <code>git stash</code> innan du gör drastiska förändringar, särskilt när du använder <code>git reset --hard</code>.</p>
+</body>
+</html>
